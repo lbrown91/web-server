@@ -18,7 +18,7 @@ var middleware = {
 app.use(middleware.logger);
 
 app.get('/about', middleware.requireAuthentication, function (req, res) {  	// create about page at localhost:3000/about
-	res.send('About Us');
+	res.send('About Us!');
 });
 
 app.use(express.static(__dirname + '/public'));

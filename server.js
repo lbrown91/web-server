@@ -3,16 +3,7 @@ var app = express();		// create express app by calling express function
 var PORT = 3000;		// uppercase var name says that var name will not change
 var date = new Date().toString();
 
-var middleware = {
-	requireAuthentication: function (req, res, next) {
-		console.log('private route hit!');
-		next();
-	},
-	logger: function (req, res, next) {
-		console.log('Request (' + date +  '): ' + req.method + ' ' + req.originalUrl);
-		next();
-	}
-};
+var middleware = require('./middleware.js');
 
 // app.use(middleware.requireAuthentication);		// important to specify middleware sooner
 app.use(middleware.logger);

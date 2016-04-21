@@ -1,6 +1,6 @@
 var express = require('express');
 var app = express();		// create express app by calling express function
-var PORT = 3000;		// uppercase var name says that var name will not change
+var PORT = process.env.PORT || 3000;		// uppercase var name says that var name will not change
 var date = new Date().toString();
 
 var middleware = require('./middleware.js');
